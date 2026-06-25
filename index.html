@@ -1,104 +1,94 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#f7dfe5" />
-<title>Маленькое письмо перед большим днём</title>
-<style>
-:root{
-  --bg:#f7e3e7; --bg2:#fdf8f2; --paper:#fffaf1; --paper2:#f7eadc;
-  --rose:#d99aaa; --rose2:#bd7288; --ink:#4c2f36; --muted:#8b6670;
-  --gold:#c7a365; --gold2:#ead8a6; --wax:#c46c84; --waxDark:#954b60;
-  --shadow:0 28px 80px rgba(91,48,61,.24);
-}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth} body{margin:0;min-height:100%;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-4;background:
- radial-gradient(circle at 25% 10%,rgba(255,255,255,.9),transparent 28%),
- radial-gradient(circle at 75% 78%,rgba(207,128,149,.34),transparent 36%),
- linear-gradient(155deg,#fff7f0 0%,#f5d6df 48%,#f8ece8 100%)}
-body:after{content:"";position:fixed;inset:0;z-index:-3;opacity:.34;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 .16'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
-.grain{position:fixed;inset:0;pointer-events:none;z-index:-2;background:
- radial-gradient(circle,rgba(199,163,101,.52) 0 1px,transparent 1.8px),radial-gradient(circle,rgba(255,255,255,.75) 0 1px,transparent 1.5px);background-size:96px 96px,138px 138px;background-position:8px 22px,48px 66px;opacity:.22;animation:floatDust 17s linear infinite}@keyframes floatDust{to{transform:translateY(-96px)}}
-.hero{min-height:100svh;display:grid;place-items:center;padding:max(24px,env(safe-area-inset-top)) 18px max(28px,env(safe-area-inset-bottom));position:relative}
-.hero-card{width:min(430px,100%);text-align:center;position:relative}.kicker{font-family:Arial,sans-serif;text-transform:uppercase;letter-spacing:.28em;font-size:10px;color:var(--gold);margin:0 0 8px}.hero-title{margin:0 0 22px;font-size:clamp(28px,8vw,42px);font-weight:400;line-height:1.05}.hero-title em{display:block;font-size:.55em;color:var(--muted);font-style:italic;margin-top:7px}
-.open-btn{display:block;width:100%;border:0;background:transparent;padding:0;cursor:pointer;touch-action:manipulation;color:inherit}.envelope-scene{width:min(350px,88vw);height:265px;margin:0 auto 16px;perspective:1200px;position:relative}.envelope{position:absolute;inset:18px 0 0;filter:drop-shadow(0 30px 34px rgba(75,35,47,.22));transform-style:preserve-3d;transition:transform 1s cubic-bezier(.2,.8,.2,1)}.env-back,.env-paper,.env-front,.env-flap{position:absolute;inset:0;border-radius:20px}.env-back{background:linear-gradient(145deg,#fff8ed,#f5cad4);border:1px solid rgba(199,163,101,.45)}.env-paper{width:84%;height:70%;left:8%;top:12%;border-radius:14px;background:linear-gradient(150deg,#fffdf7,#f7e8d8);border:1px solid rgba(199,163,101,.42);box-shadow:0 10px 25px rgba(72,34,45,.08);transition:transform 1.25s cubic-bezier(.2,.8,.2,1),opacity .6s}.env-front{z-index:3;background:linear-gradient(145deg,#e9a9b9,#fff1e8);clip-path:polygon(0 36%,50% 74%,100% 36%,100% 100%,0 100%);border:1px solid rgba(199,163,101,.34)}.env-front:before{content:"";position:absolute;inset:0;background:linear-gradient(35deg,transparent 49%,rgba(255,255,255,.32) 50%,transparent 51%)}.env-flap{z-index:4;background:linear-gradient(160deg,#fff0e6,#dc8fa5);clip-path:polygon(0 0,100% 0,50% 67%);transform-origin:top center;transition:transform 1s cubic-bezier(.22,.9,.2,1);border-top:1px solid rgba(199,163,101,.55)}
-.seal{position:absolute;z-index:6;left:50%;top:52%;width:74px;height:74px;transform:translate(-50%,-50%);border-radius:45% 53% 48% 52%/50% 45% 55% 48%;display:grid;place-items:center;color:#ffeef2;font-family:Georgia,serif;font-size:17px;letter-spacing:.03em;background:radial-gradient(circle at 31% 24%,#efb4c0 0 10%,transparent 26%),radial-gradient(circle at 68% 72%,#a9556d 0 12%,transparent 29%),linear-gradient(145deg,#d37b92,#934b60);box-shadow:inset 5px 7px 12px rgba(255,255,255,.22),inset -7px -10px 14px rgba(86,31,45,.26),0 10px 21px rgba(96,43,55,.28);transition:opacity .55s ease,transform .8s ease}.seal:before{content:"";position:absolute;inset:8px;border-radius:50%;border:1px solid rgba(255,237,241,.42);box-shadow:inset 0 2px 6px rgba(81,30,43,.18)}.seal span{position:relative;text-shadow:0 1px 0 rgba(100,42,55,.55);opacity:.9}.hint{font-family:Arial,sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:8px 0 0;animation:pulse 1.8s ease-in-out infinite}@keyframes pulse{50%{opacity:.52;transform:translateY(-2px)}}
-body.opened .env-flap{transform:rotateX(178deg)}body.opened .env-paper{transform:translateY(-72px)}body.opened .seal{opacity:0;transform:translate(-50%,-50%) scale(.54) rotate(-18deg)}body.opened .envelope{transform:translateY(16px) scale(.96)}
-.letter-wrap{display:none;padding:18px 14px 34px;position:relative}.letter-wrap.show{display:block;animation:letterIn .8s both}@keyframes letterIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-.letter{width:min(540px,100%);margin:0 auto;background:linear-gradient(145deg,rgba(255,252,244,.96),rgba(250,235,218,.96));border-radius:32px;border:1px solid rgba(199,163,101,.48);box-shadow:var(--shadow);padding:34px 24px 30px;position:relative;overflow:hidden}.letter:before{content:"";position:absolute;inset:12px;border:1px solid rgba(199,163,101,.28);border-radius:25px;pointer-events:none}.letter:after{content:"";position:absolute;inset:0;opacity:.16;background:radial-gradient(circle at 16% 6%,rgba(218,159,172,.7),transparent 22%),radial-gradient(circle at 87% 18%,rgba(234,216,166,.72),transparent 18%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.6' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E")}.content{position:relative;z-index:1}.dear{margin:2px 0 22px;line-height:.95}.dear em{display:block;font-family:'Brush Script MT','Segoe Script',cursive;font-size:clamp(36px,12vw,58px);font-style:normal;color:var(--rose2);font-weight:400}.dear strong{display:block;font-size:clamp(42px,14vw,66px);font-weight:400;color:var(--ink)}.gold-line{height:1px;width:96px;margin:20px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}p{max-width:420px;margin:0 auto 16px;font-size:18px;line-height:1.58}.soft{color:var(--muted)}.block{max-width:420px;margin:25px auto;padding:21px 18px;border-radius:25px;border:1px solid rgba(199,163,101,.32);background:linear-gradient(145deg,rgba(249,220,228,.7),rgba(255,250,242,.92));box-shadow:0 14px 36px rgba(103,55,67,.08)}.block-title{font-family:Arial,sans-serif;margin:0 0 10px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}.block p{margin-bottom:9px}.signature{margin-top:26px;font-style:italic;color:var(--rose2);font-size:20px}.ps{margin-top:24px;padding-top:18px;border-top:1px solid rgba(199,163,101,.25);font-size:15px;color:var(--muted)}.reveal{opacity:0;transform:translateY(18px);transition:opacity .85s ease,transform .85s ease}.reveal.visible{opacity:1;transform:none}.final-glow{height:26px;width:110px;margin:20px auto 0;background:radial-gradient(ellipse,rgba(199,163,101,.34),transparent 70%);filter:blur(2px)}
-@media(max-width:380px){.letter{padding:30px 20px 28px}.envelope-scene{height:248px}p{font-size:17px}.hero-title{font-size:30px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6dfe4" />
+  <title>Маленькое письмо</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-<div class="grain"></div>
-<main>
-<section class="hero" id="top">
-  <div class="hero-card">
-    <p class="kicker">маленькое письмо</p>
-    <h1 class="hero-title">перед большим днём<em>для той, кому оно предназначено</em></h1>
-    <button class="open-btn" id="openBtn" aria-label="Открыть приглашение" type="button">
-      <div class="envelope-scene">
-        <div class="envelope">
-          <div class="env-back"></div><div class="env-paper"></div><div class="env-flap"></div><div class="env-front"></div>
-          <div class="seal"><span>♡ K ♡</span></div>
-        </div>
-      </div>
-      <p class="hint">нажми, чтобы открыть</p>
-    </button>
+  <div class="grain"></div>
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+  <div class="petals" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
-</section>
-<section class="letter-wrap" id="letter">
-  <article class="letter">
-    <div class="content">
-      <h2 class="dear reveal"><em>Дорогая</em><strong>Ксюша,</strong></h2>
-      <div class="gold-line reveal"></div>
-      <p class="reveal">Есть дни, которые становятся началом чего-то особенно красивого.</p>
-      <p class="reveal">И есть дни, которые хочется сохранить в памяти до мельчайших деталей.</p>
-      <p class="reveal">Мы решили, что перед новой главой твоей жизни нам просто необходимо устроить для тебя один такой день.</p>
-      <div class="block reveal">
-        <p class="block-title">миссия дня</p>
-        <p>Проверить твою готовность к семейной жизни.</p>
-        <p class="soft">Но без строгих правил, скучных заданий и очевидных маршрутов.</p>
+
+  <main class="site" id="top">
+    <section class="hero" id="hero" aria-label="Открытие приглашения">
+      <div class="hero-inner">
+        <div class="kicker reveal-start">Маленькое письмо</div>
+        <div class="subtitle reveal-start">перед большим днём</div>
+        <div class="divider reveal-start"><span></span></div>
+
+        <button class="envelope-button reveal-start" id="openButton" type="button" aria-label="Открыть письмо">
+          <span class="envelope" aria-hidden="true">
+            <span class="paper-peek"></span>
+            <span class="env-back"></span>
+            <span class="env-flap"></span>
+            <span class="env-left"></span>
+            <span class="env-right"></span>
+            <span class="env-bottom"></span>
+            <span class="wax-seal"><span>♡ K ♡</span></span>
+          </span>
+        </button>
+
+        <button class="open-text reveal-start" id="openText" type="button">Прикоснись, чтобы открыть</button>
       </div>
-      <p class="reveal">Будут сюрпризы, смех, маленькие испытания, приятные воспоминания и моменты, которые мы давно хотели разделить именно с тобой.</p>
-      <p class="reveal">Некоторые детали пока останутся тайной. Так даже интереснее.</p>
-      <div class="block reveal">
-        <p class="block-title">что нужно сделать</p>
-        <p><strong>27 июня</strong> освободи этот день для небольшого приключения.</p>
-        <p>Тебе останется только быть готовой <strong>к 13:00</strong>.</p>
-        <p>За тобой приедет машина.</p>
-        <p class="soft">Во сколько именно — мы обязательно сообщим в день мероприятия.</p>
-        <p class="soft">Куда мы отправимся? Пусть это пока останется нашей маленькой тайной.</p>
-      </div>
-      <div class="block reveal">
-        <p class="block-title">единственная просьба</p>
-        <p>Надень свой самый шикарный <strong>розовый корсет</strong>.</p>
-        <p class="soft">Остальная одежда — на твоё усмотрение.</p>
-        <p class="soft">Просто возьми с собой хорошее настроение и будь готова ко всему.</p>
-      </div>
-      <p class="signature reveal">С любовью, твои девочки</p>
-      <p class="ps reveal">P.S. Иногда самые приятные сюрпризы оказываются... намного вкуснее, чем можно представить.</p>
-      <div class="final-glow reveal"></div>
-    </div>
-  </article>
-</section>
-</main>
-<script>
-(function(){
-  const btn=document.getElementById('openBtn'); const letter=document.getElementById('letter'); let opened=false;
-  function show(){ if(opened) return; opened=true; document.body.classList.add('opened');
-    setTimeout(()=>{letter.classList.add('show'); requestAnimationFrame(()=>letter.scrollIntoView({behavior:'smooth',block:'start'})); initReveal();},900);
-  }
-  ['click','touchend','pointerup'].forEach(e=>btn.addEventListener(e,function(ev){ev.preventDefault(); show();},{passive:false}));
-  function initReveal(){ const items=[...document.querySelectorAll('.reveal')];
-    if(!('IntersectionObserver' in window)){items.forEach(i=>i.classList.add('visible'));return;}
-    const obs=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);}})},{threshold:.16,rootMargin:'0px 0px -30px 0px'});
-    items.forEach((i,idx)=>{i.style.transitionDelay=(idx%3)*70+'ms';obs.observe(i);});
-  }
-})();
-</script>
+    </section>
+
+    <section class="letter-screen" id="letterScreen" aria-label="Письмо">
+      <article class="letter-card">
+        <div class="letter-border"></div>
+        <div class="letter-watermark">K</div>
+        <div class="letter-content">
+          <header class="letter-header scroll-reveal">
+            <div class="dear">Дорогая</div>
+            <h1>Ксюша,</h1>
+          </header>
+
+          <div class="line scroll-reveal"></div>
+
+          <p class="scroll-reveal">Есть дни, которые становятся началом чего-то особенно красивого.</p>
+          <p class="scroll-reveal">И есть дни, которые хочется сохранить в памяти до мельчайших деталей.</p>
+          <p class="scroll-reveal">Мы решили, что перед новой главой твоей жизни нам просто необходимо устроить для тебя один такой день.</p>
+
+          <section class="note-block scroll-reveal">
+            <div class="note-title">Миссия дня</div>
+            <p>Проверить твою готовность к семейной жизни.</p>
+            <p class="muted">Но без строгих правил, скучных заданий и очевидных маршрутов.</p>
+          </section>
+
+          <p class="scroll-reveal">Будут сюрпризы, смех, маленькие испытания, приятные воспоминания и моменты, которые мы давно хотели разделить именно с тобой.</p>
+          <p class="scroll-reveal">Некоторые детали пока останутся тайной. Так даже интереснее.</p>
+
+          <section class="note-block scroll-reveal">
+            <div class="note-title">Что нужно сделать</div>
+            <p><strong>27 июня</strong> освободи этот день для небольшого приключения.</p>
+            <p>Тебе останется только быть готовой к <strong>13:00</strong>.</p>
+            <p>За тобой приедет машина.</p>
+            <p class="muted">Во сколько именно — мы обязательно сообщим в день мероприятия.</p>
+            <p class="muted">Куда мы отправимся? Пусть это пока останется нашей маленькой тайной.</p>
+          </section>
+
+          <section class="note-block scroll-reveal">
+            <div class="note-title">Единственная просьба</div>
+            <p>Надень свой самый шикарный <strong>розовый корсет</strong>.</p>
+            <p class="muted">Остальная одежда — на твоё усмотрение.</p>
+            <p class="muted">Просто возьми с собой хорошее настроение и будь готова к небольшому приключению.</p>
+          </section>
+
+          <p class="signature scroll-reveal">С любовью, твои девочки</p>
+          <p class="ps scroll-reveal">P.S. Иногда самые приятные сюрпризы оказываются… намного вкуснее, чем можно представить.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
 </body>
 </html>
