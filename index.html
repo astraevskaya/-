@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6d7dc">
+  <title>Приглашение для Ксюши</title>
+  <style>
+    :root{
+      --bg:#f8d8dd;--bg2:#f5cdd4;--paper:#fff8ef;--paper2:#f9eadb;--rose:#d5899e;--rose2:#b96b83;--wax:#d18497;--wax2:#b7657b;--gold:#c6a45b;--ink:#4e3138;--muted:#84656a;--shadow:0 30px 90px rgba(82,35,48,.22)
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100svh;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:radial-gradient(circle at 50% -10%,rgba(255,255,255,.9),transparent 34%),linear-gradient(160deg,var(--bg),var(--bg2));overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.34;background-image:radial-gradient(circle,rgba(255,255,255,.8) 0 1px,transparent 1.6px),radial-gradient(circle,rgba(198,164,91,.5) 0 1px,transparent 1.8px);background-size:42px 42px,96px 96px;animation:floatDust 20s linear infinite} @keyframes floatDust{to{transform:translateY(-96px)}}
+    .hero{min-height:100svh;padding:max(28px,env(safe-area-inset-top)) 18px max(34px,env(safe-area-inset-bottom));display:grid;place-items:center;position:relative}.studio{width:min(430px,100%);text-align:center;position:relative;z-index:2}.kicker{font:600 11px/1.45 Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#8e5863;margin:0 0 18px}.title{font-size:clamp(34px,10vw,50px);line-height:.95;font-weight:400;margin:0 0 24px;letter-spacing:-.04em}.sub{font:13px/1.5 Arial,sans-serif;letter-spacing:.08em;color:var(--muted);margin:18px 0 0}
+    .openBtn{appearance:none;border:0;background:transparent;padding:0;width:min(350px,88vw);height:250px;position:relative;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}.openBtn:active{transform:scale(.995)}
+    .env{position:absolute;inset:0;filter:drop-shadow(0 34px 34px rgba(92,44,55,.18));transform-style:preserve-3d}.env:before{content:"";position:absolute;inset:0;border-radius:22px;background:linear-gradient(145deg,#fff7ef,#f0acbc);border:1px solid rgba(198,164,91,.45)}.texture{position:absolute;inset:0;border-radius:22px;opacity:.35;background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.9),transparent 20%),repeating-linear-gradient(35deg,rgba(255,255,255,.25) 0 1px,transparent 1px 5px)}.peek{position:absolute;left:8%;top:10%;width:84%;height:72%;border-radius:14px;background:linear-gradient(150deg,#fffaf2,#f4dfcf);border:1px solid rgba(198,164,91,.42);box-shadow:0 10px 28px rgba(65,28,35,.08);transition:transform 1s ease .08s}.front{position:absolute;inset:0;border-radius:22px;z-index:3;background:linear-gradient(32deg,transparent 49.5%,rgba(255,255,255,.32) 50%,transparent 50.6%),linear-gradient(148deg,#eaaec0,#fff1e6);clip-path:polygon(0 38%,50% 76%,100% 38%,100% 100%,0 100%);border:1px solid rgba(198,164,91,.38)}.flap{position:absolute;inset:0;border-radius:22px;z-index:4;background:linear-gradient(160deg,#ffe9df,#e59eb2);clip-path:polygon(0 0,100% 0,50% 69%);transform-origin:top center;transition:transform 1s cubic-bezier(.22,.9,.18,1);border-top:1px solid rgba(198,164,91,.5)}
+    .seal{position:absolute;z-index:6;left:50%;top:52%;width:82px;height:82px;transform:translate(-50%,-50%);border-radius:48% 52% 50% 45%;display:grid;place-items:center;color:#8d4b5c;font-family:Georgia,serif;font-size:21px;letter-spacing:.02em;text-shadow:0 1px 0 rgba(255,225,230,.4),0 -1px 1px rgba(87,32,47,.35);background:radial-gradient(circle at 34% 26%,#f3b9c6 0 12%,transparent 30%),radial-gradient(circle at 70% 74%,#ad5e75 0 9%,transparent 24%),linear-gradient(145deg,var(--wax),var(--wax2));box-shadow:inset 6px 7px 12px rgba(255,228,233,.32),inset -8px -10px 14px rgba(92,32,49,.22),0 12px 24px rgba(102,48,62,.28);transition:opacity .3s ease,transform .8s ease}.seal:before{content:"";position:absolute;inset:11px;border-radius:50%;border:1px solid rgba(101,46,58,.26);box-shadow:inset 0 3px 7px rgba(80,24,38,.2)}.seal span{position:relative;z-index:2;filter:drop-shadow(0 1px 0 rgba(255,230,235,.55))}
+    .opening .flap{transform:rotateX(176deg)}.opening .peek{transform:translateY(-62px)}.opening .seal{opacity:0;transform:translate(-50%,-50%) scale(.65) rotate(-14deg)}.opening .env{animation:envDip .95s ease forwards}@keyframes envDip{to{transform:translateY(12px) scale(.96)}}
+    .letterWrap{display:none;min-height:100svh;padding:max(20px,env(safe-area-inset-top)) 14px max(42px,env(safe-area-inset-bottom));position:relative;z-index:2}.letterWrap.show{display:block;animation:fade .65s ease both}@keyframes fade{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    .letter{width:min(540px,100%);margin:0 auto;background:linear-gradient(145deg,rgba(255,248,239,.96),rgba(248,232,215,.96));border:1px solid rgba(198,164,91,.48);border-radius:34px;padding:34px 24px 30px;box-shadow:var(--shadow);position:relative;overflow:hidden}.letter:before{content:"";position:absolute;inset:14px;border:1px solid rgba(198,164,91,.34);border-radius:26px;pointer-events:none}.letter:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 10% 6%,rgba(217,137,158,.14),transparent 28%),radial-gradient(circle at 92% 92%,rgba(198,164,91,.12),transparent 30%),repeating-linear-gradient(100deg,rgba(126,74,51,.03) 0 1px,transparent 1px 6px);pointer-events:none}.content{position:relative;z-index:1;text-align:center}.small{font:600 10px/1.4 Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#925765;margin:0 0 16px}h1{font-weight:400;font-size:clamp(42px,14vw,68px);line-height:.9;margin:0 0 8px;letter-spacing:-.055em}.date{font:600 12px/1.4 Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin:0 0 22px}.line{height:1px;width:98px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:20px auto}p{font-size:18px;line-height:1.58;margin:0 auto 15px;max-width:430px}.soft{color:var(--muted)}.card{margin:25px auto;padding:20px 16px;max-width:420px;border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.42),rgba(235,177,190,.28));border:1px solid rgba(198,164,91,.32)}.cardTitle{font:700 11px/1.45 Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#905463;margin:0 0 9px}.signature{font-style:italic;color:#96586a;margin-top:22px;font-size:19px}.ps{margin-top:24px;padding-top:18px;border-top:1px solid rgba(198,164,91,.28);font-size:15px;color:var(--muted)}.reveal{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}.reveal.on{opacity:1;transform:none}
+    @media(max-width:380px){.openBtn{height:228px}.letter{padding:30px 19px 27px}p{font-size:17px}.seal{width:76px;height:76px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" id="top">
+      <div class="studio">
+        <p class="kicker">личное приглашение</p>
+        <h2 class="title">Для самой счастливой девушки этого лета</h2>
+        <button class="openBtn" id="openBtn" aria-label="Открыть приглашение">
+          <span class="env" aria-hidden="true"><span class="texture"></span><span class="peek"></span><span class="flap"></span><span class="front"></span><span class="seal"><span>♡ K ♡</span></span></span>
+        </button>
+        <p class="sub">Нажми, чтобы открыть</p>
+      </div>
+    </section>
+    <section class="letterWrap" id="letter">
+      <article class="letter"><div class="content">
+        <p class="small reveal">для невесты</p>
+        <h1 class="reveal">Ксюша</h1>
+        <p class="date reveal">27 июня</p>
+        <div class="line reveal"></div>
+        <p class="reveal">Есть дни, которые становятся началом чего-то особенно красивого.</p>
+        <p class="reveal">И есть дни, которые хочется сохранить в памяти до мельчайших деталей.</p>
+        <p class="reveal">Мы решили, что перед новой главой твоей жизни нам просто необходимо устроить для тебя один такой день.</p>
+        <div class="card reveal"><p class="cardTitle">миссия дня</p><p>Проверить твою готовность к семейной жизни.</p><p class="soft">Но без строгих правил, скучных заданий и очевидных маршрутов.</p></div>
+        <p class="reveal">Будут сюрпризы, смех, маленькие испытания, приятные воспоминания и моменты, которые мы давно хотели разделить именно с тобой.</p>
+        <p class="reveal">Некоторые детали пока останутся тайной. Так даже интереснее.</p>
+        <div class="card reveal"><p class="cardTitle">что нужно сделать</p><p><strong>27 июня</strong> освободи этот день для небольшого приключения.</p><p>За тобой приедет машина.</p><p>Во сколько именно — мы обязательно сообщим в день мероприятия.</p><p class="soft">Тебе останется только быть готовой к 13:00 и довериться нам.</p><p class="soft">Куда мы отправимся? Пусть это пока останется нашей маленькой тайной.</p></div>
+        <div class="card reveal"><p class="cardTitle">единственная просьба</p><p>Надень свой самый шикарный розовый корсет.</p><p class="soft">Остальная одежда — на твоё усмотрение.</p><p class="soft">Мы уже всё подготовили. Просто возьми с собой хорошее настроение и будь готова к небольшому приключению.</p></div>
+        <p class="signature reveal">С любовью, твои девочки</p>
+        <p class="ps reveal">P.S. Иногда самые приятные сюрпризы оказываются... намного вкуснее, чем можно представить.</p>
+      </div></article>
+    </section>
+  </main>
+  <script>
+    (function(){
+      var btn=document.getElementById('openBtn'), hero=document.getElementById('top'), letter=document.getElementById('letter'), opened=false;
+      function revealVisible(){document.querySelectorAll('.reveal').forEach(function(el,i){var r=el.getBoundingClientRect(); if(r.top < window.innerHeight*0.92){setTimeout(function(){el.classList.add('on')}, Math.min(i*35,260));}})}
+      function openInvite(e){ if(e){e.preventDefault(); e.stopPropagation();} if(opened) return; opened=true; hero.classList.add('opening'); letter.classList.add('show'); setTimeout(function(){letter.scrollIntoView({behavior:'smooth',block:'start'}); revealVisible();},900); }
+      btn.addEventListener('click',openInvite,{passive:false}); btn.addEventListener('touchend',openInvite,{passive:false}); btn.addEventListener('pointerup',openInvite,{passive:false});
+      window.addEventListener('scroll',revealVisible,{passive:true}); window.addEventListener('load',revealVisible);
+    })();
+  </script>
+</body>
+</html>
